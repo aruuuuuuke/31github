@@ -1,9 +1,10 @@
 import asyncio
 import logging
-from aiogram.types import Message
+from aiogram.types import Message, ContentType
 from aiogram import Bot, Dispatcher
-from core.handlers.basic import get_start
+from core.handlers.basic import get_start, get_photo
 from core.settigns import settings
+from aiogram.filters import ContentTypesFilter, Command
 
 
 token = '6560684648:AAE-Z17JMWefoiohcgujZu9KaL5WK0y3kpI'
@@ -31,7 +32,8 @@ async def start():
 
     dp.startup.register(start_bot)
     dp.shutdown.register(stop_bot)
-    dp.message.register(get_start)
+    dp.message.register(get_start, Command(commands=['start', 'run']))
+    dp.message.register(get_photo, ContentTypesFilter(content_types=[ContentType.PHOTO]))
     try:
         await dp.start_polling(bot)
     finally:
