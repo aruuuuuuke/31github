@@ -8,12 +8,14 @@ from aiogram.filters import ContentTypesFilter, Command
 from aiogram import F
 from core.filters.iscontact import IsTrueContact
 from core.handlers.contact import get_true_contact, get_false_contact
+from core.utils.commands import set_commands
 
 
 token = '6560684648:AAE-Z17JMWefoiohcgujZu9KaL5WK0y3kpI'
 
 
 async def start_bot(bot: Bot):
+    await set_commands(bot)
     await bot.send_message(settings.bots.admin_id, text='Бот запущен')
 
 
