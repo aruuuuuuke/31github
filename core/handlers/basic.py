@@ -1,12 +1,10 @@
 import json
 from aiogram import Bot
 from aiogram.types import Message
-from core.keyboards.reply import reply_keyboard
 
 
 async def get_start(message: Message, bot: Bot):
-    await message.answer(f'<s>привет {message.from_user.first_name}. Рад тебя видеть!</s>',
-                         reply_markup=reply_keyboard)
+    await bot.send_message(message.from_user.id, f'<b> привеет {message.from_user.first_name}. Рад тебя видеть!</b>')
 
 
 async def get_photo(message: Message, bot: Bot):
