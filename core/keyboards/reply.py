@@ -1,4 +1,4 @@
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, KeyboardButtonPollType
 
 reply_keyboard = ReplyKeyboardMarkup(keyboard=[
     [
@@ -40,4 +40,26 @@ reply_keyboard = ReplyKeyboardMarkup(keyboard=[
             text='ряд 3, кнопка 4'
         ),
     ]
-], resize_keyboard=True, one_time_keyboard=True, input_field_placeholder="Your placeholder text")
+], resize_keyboard=True, one_time_keyboard=True, input_field_placeholder="Выбери кнопку")
+
+loc_tel_poll_keyboard = ReplyKeyboardMarkup(keyboard =[
+    [
+        KeyboardButton(
+            text='Отправить геолакацию',
+            request_location=True
+        )
+    ],
+    [
+        KeyboardButton(
+            text='Отправить контакт',
+            request_poll=True
+        )
+    ],
+    [
+        KeyboardButton(
+            text='Создать викторину',
+            request_poll=KeyboardButtonPollType()
+        )
+    ],
+], resize_keyboard=True, one_time_keyboard=False,
+input_field_placeholder='Отправить геолокацию')
