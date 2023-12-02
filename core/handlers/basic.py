@@ -2,12 +2,12 @@ import json
 from aiogram import Bot
 from aiogram.types import Message
 
-from core.keyboards.reply import reply_keyboard, loc_tel_poll_keyboard
+from core.keyboards.reply import reply_keyboard, loc_keyboard
 
 
 async def get_start(message: Message, bot: Bot):
     await message.answer(f'<s>привет {message.from_user.first_name}. Рад тебя видеть!</s>',
-                         reply_markup=reply_keyboard)
+                         reply_markup=loc_keyboard)
 
 
 async def get_location(message: Message, bot: Bot):

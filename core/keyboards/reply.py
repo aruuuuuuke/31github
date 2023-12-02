@@ -42,7 +42,7 @@ reply_keyboard = ReplyKeyboardMarkup(keyboard=[
     ]
 ], resize_keyboard=True, one_time_keyboard=True, input_field_placeholder="Выбери кнопку")
 
-loc_tel_poll_keyboard = ReplyKeyboardMarkup(keyboard =[
+loc_keyboard = ReplyKeyboardMarkup(keyboard =[
     [
         KeyboardButton(
             text='Отправить геолакацию',
