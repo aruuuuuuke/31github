@@ -11,6 +11,7 @@ from core.handlers.contact import get_true_contact, get_false_contact
 from core.utils.commands import set_commands
 from core.handlers.basic import get_location
 from core.handlers.basic import get_inline
+from core.handlers.callback import select_mackbook
 
 token = '6560684648:AAE-Z17JMWefoiohcgujZu9KaL5WK0y3kpI'
 
@@ -32,6 +33,7 @@ async def start():
 
     dp.startup.register(start_bot)
     dp.shutdown.register(stop_bot)
+    dp.callback_query.register(select_mackbook, F.data.startswith('apple'))
     dp.message.register(get_location, ContentTypesFilter(content_types=[ContentType.LOCATION]))
     dp.message.register(get_start, Command(commands=['start', 'run']))
     dp.message.register(get_inline, Command(commands=['inline']))
