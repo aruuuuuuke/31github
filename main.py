@@ -33,7 +33,7 @@ async def start():
 
     dp.startup.register(start_bot)
     dp.shutdown.register(stop_bot)
-    dp.callback_query.register(select_mackbook, F.data.startswith('apple'))
+    dp.callback_query.register(select_mackbook, F.data.startswith('apple_'))
     dp.message.register(get_location, ContentTypesFilter(content_types=[ContentType.LOCATION]))
     dp.message.register(get_start, Command(commands=['start', 'run']))
     dp.message.register(get_inline, Command(commands=['inline']))

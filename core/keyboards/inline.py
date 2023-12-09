@@ -4,19 +4,19 @@ select_mackbook = InlineKeyboardMarkup(inline_keyboard=[
     [
         InlineKeyboardButton(
             text='macbookpro',
-            callback_data='краткие характеристики'
+            callback_data='apple_характеристики'
         )
     ],
     [
         InlineKeyboardButton(
             text='dfghjk,mnbvftyuio',
-            callback_data='short charectiristics'
+            callback_data='apple_charectiristics'
         )
     ],
     [
         InlineKeyboardButton(
             text='macbookpro',
-            callback_data='краткие характеристики'
+            callback_data='apple_характеристики'
         )
     ],
     [
